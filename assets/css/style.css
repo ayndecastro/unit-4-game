@@ -1,0 +1,41 @@
+.text {
+    font-family: 'press start 2p';
+}
+body{
+    background: url(../images/background.gif);
+    background-size: cover;
+}
+
+.main {
+    box-sizing: border-box;
+    max-width: 960px;
+    background: rgba(255, 250, 255, 0.507);
+    min-height: 500px;
+}
+
+.imgHolder {
+    width: 200px;
+    height: 200px; 
+}
+.one {
+    background: url(../images/duterte.jpeg);
+}
+.two {
+    background: url(../images/kim.jpg);
+}
+.three {
+    background: url(../images/putin.jpg);
+}
+.four { 
+    background: url(../images/trump.jpg);
+}
+span {
+    width: 200px;
+    height:30px;
+}
+.name, .hero, .villain {
+    font-size: 10px;
+}
+.fighters, .launch {
+    background: rgba(0, 0, 0, 0.801);
+}
