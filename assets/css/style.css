@@ -17,25 +17,22 @@ body{
     width: 200px;
     height: 200px; 
 }
-.one {
-    background: url(../images/duterte.jpeg);
-}
-.two {
-    background: url(../images/kim.jpg);
-}
-.three {
-    background: url(../images/putin.jpg);
-}
-.four { 
-    background: url(../images/trump.jpg);
-}
+
 span {
     width: 200px;
-    height:30px;
+    height:40px;
 }
 .name, .hero, .villain {
     font-size: 10px;
 }
 .fighters, .launch {
     background: rgba(0, 0, 0, 0.801);
+}
+
+.name {
+    margin-top: 150px;
+}
+
+.p {
+    font-size: 14px;
 }
