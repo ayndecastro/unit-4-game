@@ -12,7 +12,7 @@ let fighters = {
     'RODRIGO DUTERTE': {
         name: 'RODRIGO DUTERTE',
         hp: 200,
-        attack: 20,
+        attack: 10,
         counterAttack: 20,
         background: $('.one').css("background", "url(assets/images/duterte.jpeg)"),
         gif: ("background", "url(assets/images/duterteg.gif)"),
@@ -21,7 +21,7 @@ let fighters = {
     'KIM JONG UN': {
         name: 'KIM JONG UN',
         hp: 210,
-        attack: 15,
+        attack: 10,
         counterAttack: 20,
         background: $('.two').css("background", "url(assets/images/kim.jpg)"),
         gif: ("background", "url(assets/images/kimg.gif)"),
@@ -30,7 +30,7 @@ let fighters = {
     'VLADIMIR PUTIN': {
         name: 'VLADIMIR PUTIN',
         hp: 170,
-        attack: 20,
+        attack: 12,
         counterAttack: 30,
         background: $('.three').css("background", "url(assets/images/putin.jpg)"),
         gif: ("background", "url(assets/images/puting.gif)"),
@@ -56,7 +56,9 @@ let hero;
 let villain;
 let winner;
 let heroHp;
+let heroHpUpdate;
 let villainHp;
+let villainHpUpdate;
 let heroAttack;
 let villainAttack;
 let interval;
@@ -122,7 +124,7 @@ $(document).ready(function () {
             $(this).addClass('hero')
             $(this).removeClass('fighter')
             $(this).css('background', fighters[hero].gif); //changes the image of the hero to a gif
-
+            $(this).find('.hp').addClass('hhp');
             heroHp = fighters[hero].hp;
             heroAttack = fighters[hero].attack;
             //test
@@ -141,8 +143,11 @@ $(document).ready(function () {
             $(this).addClass('villain')
             $(this).removeClass('fighter')
             $(this).css('background', fighters[villain].gif); //changes the image of the villain to a gif instead
+            $(this).find('.hp').addClass('vhp');
             villainHp = fighters[villain].hp;
             villainAttack = fighters[villain].counterAttack;
+            $(this).find("span.hp").text(villainHp);
+           
 
             console.log(villain);//test
             console.log(villainHp);//test
@@ -160,6 +165,8 @@ $(document).ready(function () {
         //test
         console.log('move villain to dead villain area')
     }
+
+
     //counter to check if won
     function checkIfWon() {
         if (enemyCounter === 3) {
@@ -195,6 +202,8 @@ $(document).ready(function () {
             heroAttack += heroAttack;
             heroHp -= villainAttack;
             checkHp();
+            document.querySelector('.hhp').innerText = heroHp;
+            document.querySelector('.vhp').innerText = villainHp;
             //test
             console.log(heroHp);
             console.log(heroAttack);
