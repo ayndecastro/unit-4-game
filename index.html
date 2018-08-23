@@ -2,114 +2,129 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <!--font-->
-        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-        <!--css-->
-        <link rel="stylesheet" href="assets/css/reset.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <!--bootstrap-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark p-0 fixed-top">
-            <a class="text navbar-brand bg-danger p-3 text-light position-relative mx-5" href="index.html">RPG GAME</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav position-relative ml-auto mr-5">
-                <a class="text nav-item nav-link active text-light" href="index.html">RESTART<span class="sr-only">(current)</span></a>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <!--css-->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark p-0 fixed-top">
+        <a class="text navbar-brand bg-danger p-3 text-light position-relative mx-5" href="index.html">RPG GAME</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav position-relative ml-auto mr-5">
+                <a class="text nav-item nav-link active text-light" href="index.html">RESTART
+                    <span class="sr-only">(current)</span>
+                </a>
                 <a class="text nav-item nav-link text-light" href="game-over.html">QUIT</a>
-              </div>
             </div>
-          </nav>
-          <div class="pt-5" >
-          <div class="main container mt-5 mb-5 rounded border">
-                  <div class="border-bottom my-3">
-                        <h1 class="text title m-2 p-2 text-center text-dark"> THE FIGHT OF THE CENTURY </h1>
-                        </div> 
-                        <h3 class="text text-center">CHOOSE YOUR FIGHTER</h3>
-                    <div class="row fighters rounded">
-                                    <div class="col-lg-3">
-                                                <button class="imgHolder fighter one m-3 d-flex align-items-end">
-                                                        <span class="text name text-center bg-dark text-danger pt-2" data-name = "duterte" data-hp = "180" data-attack = "20" data-counter="20">RODRIGO DUTERTE</span></br>
-                                                        <span class = "text hp text-center bg-dark text-danger pt-2"></span>
-                                                </button>
-                                        
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <button class="imgHolder fighter two m-3 d-flex align-items-end">
-                                                <span class="text name text-center bg-dark text-danger pt-2" data-name = "kim" data-hp = "200" data-attack = "15" data-counter="20">KIM JONG UN</span></br>
-                                                <span class = "text hp text-center bg-dark text-danger pt-2"></span>
-                                        </button>
-                                    </div>
-                                      <div class="col-lg-3">
-                                          <button class="imgHolder fighter three m-3 d-flex align-items-end">
-                                                <span class="text name text-center bg-dark text-danger pt-2" data-name = "putin" data-hp = "150" data-attack = "30" data-counter="30">VLADIMIR PUTIN</span></br>
-                                                <span class = "text hp text-center bg-dark text-danger pt-2"></span>
-                                          </button>
-                                      </div>
-                                      <div class="col-lg-3">
-                                          <button class="imgHolder fighter four m-3 d-flex align-items-end">
-                                                <span class="text name text-center bg-dark text-danger pt-2" data-name = "trump" data-hp = "220" data-attack = "10" data-counter="20">DONALD TRUMP</span></br>
-                                                <span class = "text hp text-center bg-dark text-danger pt-2"></span>
-                                          </button>
-                                      </div>
-                            </div>
-                            <div class="text-center">
-                                <h3 class="text my-3">HERO</h3>
-                                <div class="row">
-                                    <div class="col-lg-3"></div>
-                                    <div class="col-lg-3 d-flex my-3">
-                                            <a class="imgHolder hero d-flex align-items-center">
-                                            </a>
-                                        </div>
-                                    <div class="col-lg-3 text-left my-3">
-                                        <h4 class="text p">POWER: <span class="power text"></span> </h4>
-                                    </div>
-                                    <div class="col-lg-3"></div>
-                                </div>
-                            </div>
-                            <div class="launch text-center rounded">
-                                <button class="text nuke py-2 my-3">LAUNCH NUKE</button>
-                            </div>
-                            <div class="text-center">
-                                <h3 class="text my-3">VILLAIN</h3>
-                                <div class="row">
-                                        <div class="col-lg-3"></div>
-                                        <div class="col-lg-3 d-flex my-3">
-                                                <a class="imgHolder villain d-flex align-items-center">
-                                                </a>
-                                            </div>
-                                            <div class="col-lg-3 text-left my-3">
-                                                <h4 class="text p">POWER: <span class="power text"></span> </h4>
-                                            </div>
-                                            <div class="col-lg-3"></div>
-                                    </div>
-                            </div>
+        </div>
+    </nav>
+    <div class="pt-5">
+        <div class="main container mt-5 mb-5 rounded border">
+            <div class="border-bottom my-3">
+                <h1 class="text title m-2 p-2 text-center text-dark"> THE FIGHT OF THE CENTURY </h1>
+            </div>
+            <h3 class="text text-center">CHOOSE YOUR FIGHTER</h3>
+            <div class="row fighters rounded">
+                <div class="col-lg-3">
+                    <a class="imgHolder fighter one m-3 d-flex align-items-end">
+                        <span class="text name rd text-center bg-dark text-danger pt-2"></span>
+                        <span class="text hpd hp text-center bg-dark text-danger pt-2"></span>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a class="imgHolder fighter two m-3 d-flex align-items-end">
+                        <span class="text name kju text-center bg-dark text-danger pt-2"></span>
+                        <span class="text hpk hp text-center bg-dark text-danger pt-2"></span>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a class="imgHolder fighter three m-3 d-flex align-items-end">
+                        <span class="text name vp text-center bg-dark text-danger pt-2"></span>
+                        <span class="text hpp hp text-center bg-dark text-danger pt-2"></span>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <a class="imgHolder fighter four m-3 d-flex align-items-end">
+                        <span class="text name dt text-center bg-dark text-danger pt-2"></span>
+                        <span class="text hpt hp text-center bg-dark text-danger pt-2"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center">
+                <h3 class="text my-3">HERO</h3>
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-3 d-flex my-3">
+                        <a class="imgHolder hero d-flex align-items-center">
+                        </a>
                     </div>
-                </div>         
-             <footer class="text footer fixed-bottom container-fluid bg-dark mt-5 pt-2 pb-2 text-center text-light">
-              FIGHT
-            </footer>
+                    <div class="col-lg-3 text-left my-3">
+                        <h4 class="text heropower">POWER:
+                            <span class="power text"></span>
+                        </h4>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+            </div>
+            <div class="launch text-center rounded">
+                <button class="text nuke py-2 my-3">NUKE</button>
+            </div>
+            <div class="text-center">
+                <h3 class="text my-3">VILLAIN</h3>
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-3 d-flex my-3 villaincol">
+                        <a class="imgHolder villain d-flex align-items-center">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 text-left my-3">
+                        <h4 class="text villainpower">POWER:
+                            <span class="power text"></span>
+                        </h4>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text footer fixed-bottom container-fluid bg-dark mt-5 pt-2 pb-2 text-center text-light">
+        WAR OF THE PRESIDENTS
+    </footer>
 
 
 
-        <!--bootstrap-->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <!-- JQuery -->
-        <script src="https://code.jquery.com/jquery.js"></script>
-        <!--javascript-->
-        <script src="assets/javascript/game.js" async defer></script>
-    </body>
+    <!--bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!--javascript-->
+    <script src="assets/javascript/game.js" async defer></script>
+</body>
+
 </html>

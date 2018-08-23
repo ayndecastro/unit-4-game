@@ -7,38 +7,47 @@
 6. second fighter chosen goes to the villain
 */
 
-
-$(document).ready(function(){
-    //fighter's attributes
-
-//created object for each characters
-let duterte = {
-    hp: 180,
-    attack: 20,
-    counterAttack: 20,
-    background: $('.one').css("background", "url(assets/images/duterte.jpeg)")
-};
-let kim = {
-    hp: 200,
-    attack: 15,
-    counterAttack: 20,
-    background: $('.two').css("background", "url(assets/images/kim.jpg)")
-};
-let putin = {
-    hp: 150,
-    attack: 30,
-    counterAttack: 30,
-    background: $('.three').css("background", "url(assets/images/putin.jpg)")
-};
-let trump = {
-    hp: 220,
-    attack: 10,
-    counterAttack: 20,
-    background: $('.four').css("background", "url(assets/images/trump.jpg)")
-};
-
 //array of fighters
-let fighters = [duterte, kim, putin, trump];
+let fighters = {
+    'RODRIGO DUTERTE': {
+        name: 'RODRIGO DUTERTE',
+        hp: 200,
+        attack: 20,
+        counterAttack: 20,
+        background: $('.one').css("background", "url(assets/images/duterte.jpeg)"),
+        gif: ("background", "url(assets/images/duterteg.gif)"),
+        dead: ("background", "url(assets/images/dutertex.jpeg)")
+    },
+    'KIM JONG UN': {
+        name: 'KIM JONG UN',
+        hp: 210,
+        attack: 15,
+        counterAttack: 20,
+        background: $('.two').css("background", "url(assets/images/kim.jpg)"),
+        gif: ("background", "url(assets/images/kimg.gif)"),
+        dead: ("background", "url(assets/images/kimx.jpg)")
+    },
+    'VLADIMIR PUTIN': {
+        name: 'VLADIMIR PUTIN',
+        hp: 170,
+        attack: 20,
+        counterAttack: 30,
+        background: $('.three').css("background", "url(assets/images/putin.jpg)"),
+        gif: ("background", "url(assets/images/puting.gif)"),
+        dead: ("background", "url(assets/images/putinx.jpg)")
+    },
+    'DONALD TRUMP': {
+        name: 'DONALD TRUMP',
+        hp: 220,
+        attack: 7,
+        counterAttack: 20,
+        background: $('.four').css("background", "url(assets/images/trump.jpg)"),
+        gif: ("background", "url(assets/images/trumpg.gif)"),
+        dead: ("background", "url(assets/images/trumpx.jpg)")
+    }
+}
+
+//conditional arrays
 let gameStart = false;
 let gameHero = false;
 let heroDeath = false;
@@ -46,98 +55,156 @@ let villainDeath = false;
 let hero;
 let villain;
 let winner;
-let power;
+let heroHp;
+let villainHp;
+let heroAttack;
+let villainAttack;
 let interval;
-let deathArray = [];
+let enemyCounter = 0;
 
-$(".fighter").on("click", function() {
-    if (!(gameStart) && !(gameHero)){
-        gameHero = true;
-        //moves a fighter from the list hero
-        hero = $(this).detach().appendTo($(".hero"));
-        //test
-        console.log(hero);
-        console.log(power);
-    } else if (gameHero) {
-        gameHero = false;
-        gameStart = true;
-        //moves a fighter to the villain
-        villain = $(this).detach().appendTo(".villain");
-        console.log(villain);
-    }
-}); 
+/************************************************************************************************************************************* */
+
+//display name and hp
+//Duterte
+document.querySelector('.rd').innerText = fighters['RODRIGO DUTERTE'].name;
+document.querySelector('.hpd').innerText = fighters['RODRIGO DUTERTE'].hp;
+//Kim
+document.querySelector('.kju').innerText = fighters['KIM JONG UN'].name;
+document.querySelector('.hpk').innerText = fighters['KIM JONG UN'].hp;
+//Putin
+document.querySelector('.vp').innerText = fighters['VLADIMIR PUTIN'].name;
+document.querySelector('.hpp').innerText = fighters['VLADIMIR PUTIN'].hp;
+//Trump
+document.querySelector('.dt').innerText = fighters['DONALD TRUMP'].name;
+document.querySelector('.hpt').innerText = fighters['DONALD TRUMP'].hp;
+
+/*************************************************************************************************************************************** */
+
+$(document).ready(function () {
 
 
-
-//when a fighter is clicked an goes to either the hero or villain are
-//picture changes to a gif
-    $('.one').click(function(e){
-        $(this).css("background", "url(assets/images/duterteg.gif)")
-    });
-
-    $('.two').click(function(e){
-        $(this).css("background", "url(assets/images/kimg.gif)")
-    })
-    $('.three').click(function(e){
-        $(this).css("background", "url(assets/images/puting.gif)")
-    })
-    $('.four').click(function(e){
-        $(this).css("background", "url(assets/images/trumpg.gif)")
-    })
-
-    function gameReset () {
-        if (heroDeath) {
-            winner = villain.detach();
-        }
+    //gamereset
+    function gameReset() {
         gameStart = false;
         gameHero = false;
         heroDeath = false;
-        villainDeath = false;  
-        //return all dead fighters
-        for (let i = 0; i < deathArray.length; i++) {
-            death[i].appendTo(".fighters");
-        }
-        //reset data
+        villainDeath = false;
+        hero;
+        villain;
+        enemyCounter = 0;
+        heroHp;
+        villainHp;
 
         //duterte
-        $(".one").data("hp", duterte.hp).find(".hp").html(duterte.hp);
-        $(".one").data("attack", duterte.attack);
-        //kim
-        $(".two").data("hp", kim.hp).find(".hp").html(kim.hp);
-        $(".two").data("attack", kim.attack);
-        //putin
-        $(".three").data("hp", putin.hp).find(".hp").html(putin.hp);
-        $(".three").data("attack", putin.attack);
-        //trump
-        $(".four").data("hp", trump.hp).find(".hp").html(trump.hp);
-        $(".four").data("attack", trump.attack);
+        document.querySelector('.rd').innerText = fighters['RODRIGO DUTERTE'].name;
+        document.querySelector('.hpd').innerText = fighters['RODRIGO DUTERTE'].hp;
+        //Kim
+        document.querySelector('.kju').innerText = fighters['KIM JONG UN'].name;
+        document.querySelector('.hpk').innerText = fighters['KIM JONG UN'].hp;
+        //Putin
+        document.querySelector('.vp').innerText = fighters['VLADIMIR PUTIN'].name;
+        document.querySelector('.hpp').innerText = fighters['VLADIMIR PUTIN'].hp;
+        //Trump
+        document.querySelector('.dt').innerText = fighters['DONALD TRUMP'].name;
+        document.querySelector('.hpt').innerText = fighters['DONALD TRUMP'].hp;
     }
 
-    function checkWinner () {
-        //if all villains are out
-        if (deathArray.length === 3) {
-            function win() {
-                //something
-                gameStart = false;
-                winner = hero.detach();
-            }
+    //first fighter clicked goes to hero, second goes to villain
+    $(".fighter").on("click", function () {
+        if (gameHero !== true) {
 
-            interval = setTimeout(win, 2000);
-            
-        } else {
-            //something
+            //give us the hero and provide it with 'hero' class and remove fighter class
+            //to prevent it from being clicked twice
+
             gameHero = true;
+            hero = $(this).find(".fighter, .name").text()
+            $(this).detach().appendTo('.hero')
+            $(this).addClass('hero')
+            $(this).removeClass('fighter')
+            $(this).css('background', fighters[hero].gif); //changes the image of the hero to a gif
+
+            heroHp = fighters[hero].hp;
+            heroAttack = fighters[hero].attack;
+            //test
+            console.log(hero);
+            console.log(heroHp);
+            console.log(heroAttack);
+
+        } else if (gameStart !== true) {
+
+            //give us the villain and provide it with 'villain' class and remove fighter class
+            //to prevent it from being clicked twice
+
+            gameStart = true;
+            villain = $(this).find(".fighter, .name").text()
+            $(this).detach().appendTo('.villain')
+            $(this).addClass('villain')
+            $(this).removeClass('fighter')
+            $(this).css('background', fighters[villain].gif); //changes the image of the villain to a gif instead
+            villainHp = fighters[villain].hp;
+            villainAttack = fighters[villain].counterAttack;
+
+            console.log(villain);//test
+            console.log(villainHp);//test
+            console.log(villainAttack);//test
+        }
+
+    });
+
+    //function to remove the dead villain and create a new element that the next chosen villain will go to
+    function moveToVillainDeathArea() {
+        $('.villain').addClass('dead').removeClass('.villain');
+        $('.dead').detach();
+        $(".villaincol").append("<a class='imgHolder villain d-flex align-items-center'></a>");
+
+        //test
+        console.log('move villain to dead villain area')
+    }
+    //counter to check if won
+    function checkIfWon() {
+        if (enemyCounter === 3) {
+            window.location.href = "win.html";
         }
     }
 
-    
+    //give us conditions of you win or lose
+    function checkHp() {
+        if (heroHp <= 0) {
+            window.location.href = "game-over.html";
+        } else if (villainHp <= 0) {
+            moveToVillainDeathArea();
+            gameStart = false;
+            villain = null;
+            enemyCounter++;
+            checkIfWon();
+            //test
+            console.log("villain defeated")
+        }
+    };
 
-   
-    gameReset();
-   
 
-    
+
+
+    //fight
+    $(".nuke").on("click", function () {
+        if (hero != null && villain != null) {
+            //test
+            console.log("FIGHT");
+
+            villainHp -= heroAttack;
+            heroAttack += heroAttack;
+            heroHp -= villainAttack;
+            checkHp();
+            //test
+            console.log(heroHp);
+            console.log(heroAttack);
+            console.log("vs");
+            console.log(villainHp);
+            console.log(villainAttack);
+        }
+    })
+
+
+
 })
-
-
 

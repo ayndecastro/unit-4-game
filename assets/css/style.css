@@ -25,7 +25,7 @@ span {
 .name, .hero, .villain {
     font-size: 10px;
 }
-.fighters, .launch {
+.fighters, .launch, .gameover {
     background: rgba(0, 0, 0, 0.801);
 }
 
@@ -35,4 +35,12 @@ span {
 
 .p {
     font-size: 14px;
+}
+.winwallpaper{
+    background: url(../images/win.gif);
+    background-size: cover;
+}
+.gameoverwp {
+    background: url(../images/gameover.gif);
+    background-size: cover;
 }
