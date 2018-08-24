@@ -44,3 +44,7 @@ span {
     background: url(../images/gameover.gif);
     background-size: cover;
 }
+
+.deadvillaintitle {
+    background: rgba(253, 4, 4, 0.555);
+}

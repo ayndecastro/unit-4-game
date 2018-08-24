@@ -11,36 +11,36 @@
 let fighters = {
     'RODRIGO DUTERTE': {
         name: 'RODRIGO DUTERTE',
-        hp: 200,
+        hp: 180,
         attack: 10,
-        counterAttack: 20,
+        counterAttack: 10,
         background: $('.one').css("background", "url(assets/images/duterte.jpeg)"),
         gif: ("background", "url(assets/images/duterteg.gif)"),
         dead: ("background", "url(assets/images/dutertex.jpeg)")
     },
     'KIM JONG UN': {
         name: 'KIM JONG UN',
-        hp: 210,
-        attack: 10,
-        counterAttack: 20,
+        hp: 170,
+        attack: 12,
+        counterAttack: 15,
         background: $('.two').css("background", "url(assets/images/kim.jpg)"),
         gif: ("background", "url(assets/images/kimg.gif)"),
         dead: ("background", "url(assets/images/kimx.jpg)")
     },
     'VLADIMIR PUTIN': {
         name: 'VLADIMIR PUTIN',
-        hp: 170,
-        attack: 12,
-        counterAttack: 30,
+        hp: 150,
+        attack: 15,
+        counterAttack: 20,
         background: $('.three').css("background", "url(assets/images/putin.jpg)"),
         gif: ("background", "url(assets/images/puting.gif)"),
         dead: ("background", "url(assets/images/putinx.jpg)")
     },
     'DONALD TRUMP': {
         name: 'DONALD TRUMP',
-        hp: 220,
+        hp: 200,
         attack: 7,
-        counterAttack: 20,
+        counterAttack: 15,
         background: $('.four').css("background", "url(assets/images/trump.jpg)"),
         gif: ("background", "url(assets/images/trumpg.gif)"),
         dead: ("background", "url(assets/images/trumpx.jpg)")
@@ -63,6 +63,7 @@ let heroAttack;
 let villainAttack;
 let interval;
 let enemyCounter = 0;
+
 
 /************************************************************************************************************************************* */
 
@@ -128,9 +129,9 @@ $(document).ready(function () {
             heroHp = fighters[hero].hp;
             heroAttack = fighters[hero].attack;
             //test
-            console.log(hero);
-            console.log(heroHp);
-            console.log(heroAttack);
+            // console.log(hero);
+            // console.log(heroHp);
+            // console.log(heroAttack);
 
         } else if (gameStart !== true) {
 
@@ -149,9 +150,9 @@ $(document).ready(function () {
             $(this).find("span.hp").text(villainHp);
            
 
-            console.log(villain);//test
-            console.log(villainHp);//test
-            console.log(villainAttack);//test
+            // console.log(villain);//test
+            // console.log(villainHp);//test
+            // console.log(villainAttack);//test
         }
 
     });
@@ -163,7 +164,7 @@ $(document).ready(function () {
         $(".villaincol").append("<a class='imgHolder villain d-flex align-items-center'></a>");
 
         //test
-        console.log('move villain to dead villain area')
+        //console.log('move villain to dead villain area')
     }
 
 
@@ -185,7 +186,7 @@ $(document).ready(function () {
             enemyCounter++;
             checkIfWon();
             //test
-            console.log("villain defeated")
+           // console.log("villain defeated")
         }
     };
 
@@ -196,20 +197,22 @@ $(document).ready(function () {
     $(".nuke").on("click", function () {
         if (hero != null && villain != null) {
             //test
-            console.log("FIGHT");
+           // console.log("FIGHT");
 
             villainHp -= heroAttack;
-            heroAttack += heroAttack;
+            heroAttack += fighters[hero].attack; //increase attack by base attack
             heroHp -= villainAttack;
             checkHp();
             document.querySelector('.hhp').innerText = heroHp;
             document.querySelector('.vhp').innerText = villainHp;
+            document.querySelector('.hpower').innerText = "POWER: " + heroAttack + "kt of nuclear power";
+            document.querySelector('.vpower').innerText = "POWER: " + villainAttack + "kt of nuclear power";
             //test
-            console.log(heroHp);
-            console.log(heroAttack);
-            console.log("vs");
-            console.log(villainHp);
-            console.log(villainAttack);
+           // console.log(heroHp);
+           // console.log(heroAttack);
+           // console.log("vs");
+           // console.log(villainHp);
+            //console.log(villainAttack);
         }
     })
 
